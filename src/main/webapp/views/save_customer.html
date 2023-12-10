@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<div class="box-all">
+    <div class="container">
+        <form action="/save" method="post" th:object="${customer}">
+            <div class="wrapper_student">
+                <h2>Thông tin học viên</h2>
+                <div class="form_group">
+                    <!-- thông tin họ tên -->
+                    <label >Fullname</label>
+                    <input type="text"  placeholder="ID" th:field="*{id}"/>
+                </div>
+                <div class="form_group">
+                    <!-- thông tin họ tên -->
+                    <label for="name">Fullname</label>
+                    <input type="text" id="name" placeholder="Nguyen Van A" th:field="*{name}"/>
+                </div>
+                <div class="form_group form">
+                    <!-- thông tin email-->
+                    <label for="email">Email</label>
+                    <input th:field="*{email}" type="email" id="email" placeholder="...@gmail.com"/>
+                </div>
+                <div class="form_group">
+                    <!-- thông tin số điện thoại -->
+                    <label for="telNumber">Phone number</label>
+                    <input th:field="*{phone}" type="tel" id="telNumber" placeholder="0123456789"/>
+                </div>
+                <div class="form_group">
+                    <!-- thông tin địa chỉ -->
+                    <label for="address">Address</label>
+                    <input th:field="*{address}" type="text" id="address" placeholder="Nhập Address"/></div>
+                <!-- Phần radio -->
+                <!-- Phần submit button -->
+                <div class="button">
+                    <button class="btn btn_primary save-student" type="submit">
+                        Submit
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>
